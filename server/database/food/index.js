@@ -11,7 +11,7 @@ ref:"images"},
 price:{type:Number,default:150,required:tue},
 restaurant:{
     type:mongoose.Types.ObjectId,
-    ref:"Restaurants"
+    ref:"restaurants"
 }
 });
 export const foodModel=mongoose.model("food",foodSchema);

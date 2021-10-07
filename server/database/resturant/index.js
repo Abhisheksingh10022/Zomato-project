@@ -18,9 +18,9 @@ const RestaurantSchema =new Mongoose.schema({
     },
     menu:{
         type:Mongoose.Types.objectId,
-        ref:"Menus,"
+        ref:"menu,"
     },
-    reviews:[{type:Mongoose.Types.objectId,ref:"Reviews"}],
+    reviews:[{type:Mongoose.Types.objectId,ref:"reviews"}],
     photos:{type:Mongoose.Types.objectId,ref:"images"},
 });
-export const restaurantModel=Mongoose.model("Restaurants",RestaurantSchema);
+export const restaurantModel=Mongoose.model("restaurants",RestaurantSchema);
