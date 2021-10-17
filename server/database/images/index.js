@@ -5,4 +5,4 @@ const imageSchema=new Mongoose.schema({
         location:{type:String,required:true},
     }]
 });
-export  const imageModel=mongoose.model("images",imageSchema);
+export  const imageModel=Mongoose.model("images",imageSchema);

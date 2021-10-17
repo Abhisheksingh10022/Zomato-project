@@ -8,7 +8,7 @@ const RestaurantSchema =new Mongoose.schema({
     cuisine:[String],
     restauranttimings:String,
     contactNumber:Number,
-    website:Number,
+    website:String,
     popularDishes:[String],
     averageCost:Number,
     amenties:[String],
@@ -18,7 +18,7 @@ const RestaurantSchema =new Mongoose.schema({
     },
     menu:{
         type:Mongoose.Types.objectId,
-        ref:"menu,"
+        ref:"menu"
     },
     reviews:[{type:Mongoose.Types.objectId,ref:"reviews"}],
     photos:{type:Mongoose.Types.objectId,ref:"images"},

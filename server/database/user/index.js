@@ -7,4 +7,4 @@ const userSchema=new mongoose.Schema({
     address:[{detail:{type:String},for:{type:String}}],
     phoneNumber:[{type:Number}]
 });
-export   const userModel=mongoose.model("Users",userSchema);
+export   const userModel=mongoose.model("users",userSchema);
