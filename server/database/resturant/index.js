@@ -1,26 +1,28 @@
-import {  Mongoose } from "mongoose";
-
-const RestaurantSchema =new Mongoose.schema({
-    name:{type:String,required:true},
-    city:{type:String,required:true},
-    address:{type:String,required:true},
-    maplocation:{type:String,required:true},
-    cuisine:[String],
-    restauranttimings:String,
-    contactNumber:Number,
-    website:String,
-    popularDishes:[String],
-    averageCost:Number,
-    amenties:[String],
-    menuImages:{
-        type:Mongoose.Types.objectId,
-        ref:"images",
+import mongoose from "mongoose";
+const RestaurantSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    city: { type: String, required: true },
+    address: { type: String, required: true },
+    mapLocation: { type: String, required: true },
+    cuisine: [String],
+    restaurantTimings: String,
+    contactNumber: Number,
+    website: String,
+    popularDishes: [String],
+    averageCost: Number,
+    amenties: [String],
+    menuImages: {
+      type: mongoose.Types.ObjectId,
+      ref: "Images",
     },
-    menu:{
-        type:Mongoose.Types.objectId,
-        ref:"menu"
+    menu: {
+      type: mongoose.Types.ObjectId,
+      ref: "Menu",
     },
-    reviews:[{type:Mongoose.Types.objectId,ref:"reviews"}],
-    photos:{type:Mongoose.Types.objectId,ref:"images"},
-});
-export const restaurantModel=Mongoose.model("restaurants",RestaurantSchema);
+    reviews: [{ type: mongoose.Types.ObjectId, ref: "Reviews" }],
+    photos: { type: mongoose.Types.ObjectId, ref: "Images" },
+  },
+ 
+);
+export const RestaurantModel = mongoose.model("Restaurants", RestaurantSchema);

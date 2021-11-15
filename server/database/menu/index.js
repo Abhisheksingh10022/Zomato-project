@@ -1,17 +1,18 @@
-import { Mongoose } from "mongoose";
-
-const menuSchema= new Mongoose.schema({
-    menu:[{
+import  Mongoose  from "mongoose";
+const menuSchema= new Mongoose.Schema({
+    menu:[
+        {
         name:{type:String,required:true},
         items:[{
             type:Mongoose.Types.ObjectId,
-            ref:"food",
+            ref:"Food",
         }]
-    }],
+    }
+],
     recomended:[{
         type:Mongoose.Types.ObjectId,
-        ref:"food",
+        ref:"Food",
         unique:true,
     }]
 });
-export const menuModel=Mongoose.model("menu",menuSchema);
+export const menuModel=Mongoose.model("Menu",menuSchema);

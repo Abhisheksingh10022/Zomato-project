@@ -1,18 +1,20 @@
-import { Mongoose } from "mongoose";
+import  Mongoose  from "mongoose";
 
-const reviewSchema=new Mongoose.schema({
+const reviewSchema=new Mongoose.Schema({
     food:{
         type:Mongoose.Types.ObjectId,
-        ref:"food",
+        ref:"Food",
     },
     restaurant:{
         type:Mongoose.Types.ObjectId,
-        ref:"restaurants",
+        ref:"Restaurants",
     },
-    user:{type:Mongoose.Types.ObjectId,ref:"users"},
+    user:{type:Mongoose.Types.ObjectId,ref:"Users"},
     rating:{type:Number,required:true},
     reviewtext:{type:String},
-    photos:[{type:Mongoose.Types.ObjectId,ref:"images"}]
+    isFoodReview:{type:Boolean,required:true},
+    isRestaurantRevie:{type:Boolean,required:true},
+    photos:[{type:Mongoose.Types.ObjectId,ref:"Images"}]
 
 });
-export const reviewModel=Mongoose.model("reviews",reviewSchema);
+export const reviewModel=Mongoose.model("Reviews",reviewSchema);

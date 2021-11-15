@@ -2,43 +2,44 @@
 import express from  "express";
 //models
 import { userModel } from "../../database/user";
-import bcrypt from "bcryptjs";
+import { validateSignup,validateSignin } from "../../validation/auth";
+import passport from "passport";
 
-import jwt from "jsonwebtoken";
 const Router = express.Router();
-/*
-Route /signup
-Des signup with email or phone number
-params none
-Acess public
-method post
-*/
-Router.post("/signup", async  (req,res)=>{ 
+Router.post("/signup", async  (req,res)=>{
     try{
+        await validateSignup(req.body.credentials);
  const {email,password,fullname,phoneNumber}=req.body.credentials;
+await userModel.findByEmailAndPhone(email,phoneNumber);
+const newUser=await userModel.create(req.body.credentials);
 
- // check email exist
-const checkuserByEmail=await userModel.findOne({email});
-const checkuserByPhoneNumber=await userModel.findOne({phoneNumber});
-if(checkuserByEmail||checkuserByPhoneNumber)
-{
-    return res.json({error:"user already exist"});
-}
-
-//hash the password
-const bcryptSalt= await bcrypt.genSalt(8);
-
-const hashpassword=await bcrypt.hash(password,bcryptSalt);
-await userModel.create({...req.body.credentials,password:hashpassword});
-const token =jwt.sign({user:{fullname,email,password,phoneNumber}},"zomatoapp");
- //geneate jwt token
-
- //return
- return res.json.Status(200).json({token,status:500});
+const token=newUser.generateJwttoken();
+return res.status(200).json({token,status:"success"});
     } 
     catch(error)
     {
         return res.status(500).json({error:error.message});
     }
+});
+Router.post("/signin", async  (req,res)=>{ 
+    try{
+ await validateSignin(req.body.credentials);
+const user=await userModel.findByEmailAndPassword(req.body.credentials);
+
+const token=user.generateJwttoken();
+return res.status(200).json({token,status:"success"});
+    } 
+    catch(error)
+    {
+        return res.status(500).json({error:error.message});
+    }
+});
+//google authentication
+Router.get("/google",passport.authenticate("google",{scope:["https://www.googleapis.com/auth/userinfo.profile",
+"https://www.googleapis.com/auth/userinfo.email"]}));
+//callback
+Router.get("/google/callback",passport.authenticate("google",{failureRedirect:"/"}),
+(req,res)=>{
+    return res.json({token:req.session.passport.user.token});
 });
 module.exports=Router;

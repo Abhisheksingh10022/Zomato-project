@@ -1,12 +1,12 @@
-import { Mongoose } from "mongoose";
+import  Mongoose  from "mongoose";
 
-const orderSchema=new Mongoose.schema({
+const orderSchema=new Mongoose.Schema({
     user:{
         type:Mongoose.Types.ObjectId,
-        ref:"users",
+        ref:"Users",
     },
     orderDetails:[{
-food:{type:Mongoose.Types.ObjectId,ref:"food"},
+food:{type:Mongoose.Types.ObjectId,ref:"Food"},
 quantity:{type:Number,required:true},
 paymode:{type:String,required:true},
 status:{type:String,default:"Placed"},
@@ -16,9 +16,6 @@ paymentDetails:{
     tax:{type:Number,required:true},
 }
     }],
-    orderRatings:{
-        type:Number,
-        required:true
-    }
+  
 });
-export const orderModel=Mongoose.model("order",orderSchema);
+export const orderModel=Mongoose.model("Order",orderSchema);

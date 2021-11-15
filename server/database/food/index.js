@@ -6,12 +6,14 @@ discription:{type:String,required:true},
 isVeg:{type:Boolean,requird:true},
 iscontainsEgg:{type:Boolean,requird:true},
 category:{type:String,required:true},
-photos:{type: mongoose.Types.ObjectId,
-ref:"images"},
-price:{type:Number,default:150,required:tue},
+photos:{
+type: mongoose.Types.ObjectId,
+ref:"Images"},
+price:{type:Number,default:150,required:true},
 restaurant:{
     type:mongoose.Types.ObjectId,
-    ref:"restaurants"
+    ref:"Restaurants",
+    required:true
 }
 });
-export const foodModel=mongoose.model("food",foodSchema);
+export const foodModel=mongoose.model("Food",foodSchema);
