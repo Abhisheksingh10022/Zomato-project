@@ -1,21 +1,21 @@
-//libraries
+/*libraries
 
 import express from "express";
 
 
 import multer from "multer";
-//Database
+Database
 import {imageModel} from "../../database/allmodel";
 
 const Router=express.Router();
 
-/*multer config*/
+multer config
 const storage=multer.memoryStorage();
 const upload=multer({storage});
 
-//Route /
-//des upload given images to s3 bucket and save file link to mongodb
-//method post
+Route /
+des upload given images to s3 bucket and save file link to mongodb
+method post
 Router.post("/",upload.single("file"),async(req,res)=>{
     try{
 
@@ -40,3 +40,4 @@ return res.status(200).json({uploadimage});
     }
 });
 export default Router;
+*/
