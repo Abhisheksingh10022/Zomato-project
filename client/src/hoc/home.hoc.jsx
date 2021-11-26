@@ -3,7 +3,7 @@ import React  from "react";
 import HomeLayout from "../layout/home.layout"
 const HomeLayoutHOC=(Component)=>
 {
- const mycom = props=>{
+ const mycom =  props=>{
   return(
     <>
   

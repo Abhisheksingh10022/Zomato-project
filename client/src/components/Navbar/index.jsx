@@ -19,12 +19,10 @@ const MobileNav=()=>{
     </nav>
     </>
 };
-
-
 const LgNav=()=>{
     return<>
-    <div className="hidden  md:flex py-8 px-8 gap-4 lg:w-3/4">
-    <div className="w-32 px-4 py-4">
+    <div className="hidden  md:flex py-8 px-8 gap-4 w-full">
+    <div className="w-36 px-4 py-4 ml-20">
                 <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" 
                 alt="logo"
                 className="w-full h-full"
@@ -43,7 +41,7 @@ const LgNav=()=>{
                     <input type="search" placeholder="search for restaurant,cuisine or a dish" className=" focus:outline-none w-full" ></input>
                 </div>
             </div>
-            <div className="flex items-center gap-3 lg:justify-end">
+            <div className="flex items-center gap-4 lg:justify-end ml-20">
                 <button className="text-gray-500 text-xl hover:text-gray-700">Login</button>
                 <button className="text-gray-500 text-xl hover:text-gray-700">Signup</button>
             </div>
@@ -56,8 +54,8 @@ const Navbar=()=>{
     return (
     <>
 <nav>
-    <div className="md:hidden"><MobileNav /></div>
-    <div className="hidden md:flex"> <LgNav /></div>
+    <div className="lg:hidden"><MobileNav /></div>
+    <div className="hidden lg:flex"> <LgNav /></div>
 </nav>
     </>
     )

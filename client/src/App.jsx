@@ -1,15 +1,16 @@
 import HomeLayoutHoc from "./hoc/home.hoc";
-import Temp from "./components/temp";
+
 import React from "react";
+import HomeLayout from "./layout/home.layout";
 import { Route, Routes } from "react-router";
 
 function App()
-{const Home =HomeLayoutHoc(Temp);
+{
  return(
      <Routes>
      <Route
      path="/"
-   element={<Home ></Home>}
+   element={<HomeLayout ></HomeLayout>}
 />
 </Routes>
  )
