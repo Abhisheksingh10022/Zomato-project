@@ -5,6 +5,7 @@ const HomeLayout =(props)=>{
 return <> 
 <Navbar />
 <FoodTab />
+{props.children}
 </>
 };
 export default HomeLayout;
