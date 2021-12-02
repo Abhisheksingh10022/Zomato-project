@@ -1,7 +1,8 @@
 import React from "react";
 import DeliveyCategory from "./DeliveryCategory";
-import slider from "react-slick";
+
 import Slider from "react-slick";
+import { NextArrow ,PrevArrow} from "../carousalArrow";
 const DeliveryCarousel =()=>{
 
 const categories=[{
@@ -43,12 +44,14 @@ const settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    NextArrow:<NextArrow />,
+     PrevArrow:<PrevArrow />
   };
 
     return(
         <>
-        <h1 className="text-xl font-semibold">Inspiration for your first order </h1>
+        <h1 className="text-xl font-semibold mb-4">Inspiration for your first order </h1>
         <div className="  lg:hidden flex flex-wrap gap-3 justify-between my-4">
         {
            categories.map((item)=>{
