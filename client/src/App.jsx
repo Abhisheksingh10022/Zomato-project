@@ -12,6 +12,7 @@ function App()
      <Routes>
      <Route  path="/" exact element={<HomeLayout ></HomeLayout>}/>
     <Route path="/:type" exact  element={<Master></Master>} />
+    
 </Routes>
  )
 }
