@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams} from "react-router-dom";
-import Delivery from "./Delivery";
-import Dining from "./Dining Out";
-const Master=()=>{
+import Delivery from "../components/Delivery";
+import Dining from "../components/Dining Out";
+const Home=()=>{
     const {type}=useParams();
 
     return (
@@ -14,4 +14,4 @@ const Master=()=>{
     )
 
 }
-export default Master;
+export default Home;
