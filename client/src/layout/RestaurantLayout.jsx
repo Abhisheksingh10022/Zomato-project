@@ -7,7 +7,8 @@ import {AiOutlineStar } from "react-icons/ai";
 import {MdDirections} from "react-icons/md";
 import {BsFillBookmarkPlusFill} from "react-icons/bs";
 import{IoIosShareAlt} from "react-icons/io"
-const RestaurantLayout =()=>{
+import TabContainer from "../components/Restaurant/TabContainer";
+const RestaurantLayout =(props)=>{
     return(
         <>
    <RestaurantNavbar />
@@ -38,7 +39,12 @@ const RestaurantLayout =()=>{
 
 
                    </div>
-                    
+                   <div className="my-4">
+                    <TabContainer />
+                    </div>
+                    <div>
+                      {props.children}
+                    </div>
                     </div>
         </>
     )
