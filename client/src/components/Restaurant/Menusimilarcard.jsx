@@ -3,7 +3,8 @@ import {TiStar} from "react-icons/ti";
 const  MenuSimilarCard =(props)=>{
     
         return (<>
-        <div className="bg-white shadow rounded-md w-24 w-64">
+        <div className="mx-2">
+        <div className="bg-white shadow rounded-md  overflow-hidden">
             <div className="w-full h-48">
                 <img src={props.image}
                 alt="food"
@@ -27,14 +28,15 @@ const  MenuSimilarCard =(props)=>{
                         3
                         <TiStar />
                     </span>
-                    Dining
+                    Delivery
                 </span>
                 </div>
                 <div>
-                <h4>street food,North indian</h4>
+                <h4>Street food,North indian</h4>
                 </div>
                 </div>
             </div>
+        </div>
         </div>
         </>
         )

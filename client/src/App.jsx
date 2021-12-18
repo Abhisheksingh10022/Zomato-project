@@ -11,8 +11,9 @@ function App()
      const Home=HomeLayoutHoc(Homex);
  return(
     <Routes>
-         <Route  path="/" exact element={<RestaurantLayout ></RestaurantLayout>}/>
+         <Route  path="/" exact element={<Home></Home>}/>
    <Route path="/:type" exact  element={<Home></Home>} />  
+   <Route path="/restaurant" exact element={<RestaurantLayout></RestaurantLayout>} />
     <Route path="/restaurant/overview" exact element={<Overview></Overview>} />
     <Route path="/restaurant/order-online" exact element={<RestaurantLayout></RestaurantLayout>} />
     <Route path="/restaurant/Review" exact element={<RestaurantLayout></RestaurantLayout>} />
