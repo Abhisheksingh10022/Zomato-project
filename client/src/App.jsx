@@ -6,16 +6,18 @@ import { Route, Routes } from "react-router-dom";
 import RestaurantLayout from "./layout/RestaurantLayout";
 import Homex from "./Page/Home";
 import Overviewx from "./Page/Restaurant/overview";
+import OrderOnlinex from "./Page/Restaurant/order-online";
 function App()
 { const Overview=RestaurantLayoutHoc(Overviewx);
      const Home=HomeLayoutHoc(Homex);
+     const OrderOnline=RestaurantLayoutHoc(OrderOnlinex);
  return(
     <Routes>
          <Route  path="/" exact element={<Home></Home>}/>
    <Route path="/:type" exact  element={<Home></Home>} />  
    <Route path="/restaurant" exact element={<RestaurantLayout></RestaurantLayout>} />
     <Route path="/restaurant/overview" exact element={<Overview></Overview>} />
-    <Route path="/restaurant/order-online" exact element={<RestaurantLayout></RestaurantLayout>} />
+    <Route path="/restaurant/order-online" exact element={<OrderOnline></OrderOnline>} />
     <Route path="/restaurant/Review" exact element={<RestaurantLayout></RestaurantLayout>} />
     <Route path="/restaurant/Menu" exact element={<RestaurantLayout></RestaurantLayout>} />
     <Route path="/restaurant/photos" exact element={<RestaurantLayout></RestaurantLayout>} />

@@ -8,7 +8,9 @@ import { PrevArrow } from "../../components/carousalArrow";
 import { NextArrow } from "../../components/carousalArrow";
 import ReactStars from "react-rating-stars-component";
 import ReviewCard from "../../components/Restaurant/Reviews/ReviewCard";
-import {MapContainer,TileLayer,Marker,Popup} from "react-leaflet"
+
+import {MapContainer,TileLayer,Marker,Popup} from "react-leaflet";
+import Mapview from "../../components/Restaurant/Mapview";
 const Overview =()=>{
   
     const settings = {
@@ -76,6 +78,7 @@ const Overview =()=>{
                           activeColor="#ffd700"
                           />
                          </div>
+                    <div className="md:hidden w-full  my-4 flex flex-col gap-4"><Mapview title="Pahalwan" phno="91987473" mapLocation={[51.505,-0.09]} address="gandhi nagar,jammu"/></div>
                          <div className="my-4">
                         <ReviewCard />
                         <ReviewCard />
@@ -85,29 +88,9 @@ const Overview =()=>{
                 </div>
                 <aside
                 style={{height:"fit-content"}}
-                 className="hidden md:block md:w-2/5 fixed sticky top-2 bg-green-200 p-3 shadow-md">
-               <div>
-                <h4 className="text-lg font-medium"> call</h4>
-                <h5 className="text-Zomato-400 font-medium">9149919387</h5>
-                </div>
-                <div>
-                    <h4 className="text-xl font-medium">Direction</h4>
-          <div className="w-full h-40">    
-           
-  <MapContainer center={[51.505,-0.09]} zoom={13} scrollWheelZoom={false}>
-    <TileLayer
-      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-    <Marker position={[51.505,-0.09]}>
-      <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
-      </Popup>
-    </Marker>
-  </MapContainer>
-</div>
- </div>
- </aside> 
+                 className="hidden md:block md:w-2/5 fixed sticky top-2  p-3 shadow-md">
+               <Mapview title="Pahalwan" phno="91987473" mapLocation={[51.505,-0.09]} address="gandhi nagar,jammu"/>
+            </aside> 
         </div>
 
         </>

@@ -14,6 +14,11 @@ restaurant:{
     type:mongoose.Types.ObjectId,
     ref:"Restaurants",
     required:true
+},
+reviews:{
+    type:mongoose.Types.ObjectId,
+    ref:"Reviews",
+    required:true
 }
 });
 export const foodModel=mongoose.model("Food",foodSchema);
