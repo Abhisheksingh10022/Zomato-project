@@ -7,10 +7,13 @@ import RestaurantLayout from "./layout/RestaurantLayout";
 import Homex from "./Page/Home";
 import Overviewx from "./Page/Restaurant/overview";
 import OrderOnlinex from "./Page/Restaurant/order-online";
+import Reviewx from "./Page/Restaurant/reviews";
+import Review from "./Page/Restaurant/reviews";
 function App()
 { const Overview=RestaurantLayoutHoc(Overviewx);
      const Home=HomeLayoutHoc(Homex);
      const OrderOnline=RestaurantLayoutHoc(OrderOnlinex);
+     const Reviews=RestaurantLayoutHoc(Reviewx);
  return(
     <Routes>
          <Route  path="/" exact element={<Home></Home>}/>
@@ -18,7 +21,7 @@ function App()
    <Route path="/restaurant" exact element={<RestaurantLayout></RestaurantLayout>} />
     <Route path="/restaurant/overview" exact element={<Overview></Overview>} />
     <Route path="/restaurant/order-online" exact element={<OrderOnline></OrderOnline>} />
-    <Route path="/restaurant/Review" exact element={<RestaurantLayout></RestaurantLayout>} />
+    <Route path="/restaurant/Review" exact element={<Reviews />} />
     <Route path="/restaurant/Menu" exact element={<RestaurantLayout></RestaurantLayout>} />
     <Route path="/restaurant/photos" exact element={<RestaurantLayout></RestaurantLayout>} />
 </Routes> 
