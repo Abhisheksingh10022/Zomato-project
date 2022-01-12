@@ -39,7 +39,7 @@ const Overview =()=>{
                 
                 </div>
                 <div className="flex flex-wrap gap-3 my-4">
-                        <MenuCollection menuTitle="Menu" pages="3" image="https://b.zmtcdn.com/data/menus/629/18702629/8de5ca03c1ba002e21d34d54a5a6835f.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A" />
+                        <MenuCollection menuTitle="Menu" pages="3" image={["https://b.zmtcdn.com/data/menus/629/18702629/8de5ca03c1ba002e21d34d54a5a6835f.jpg"]} />
                     </div>
                     <h4 className="text-lg font-medium my-4">cuisines</h4>
                     <div className="flex flex-col  gap-2 w-32">
